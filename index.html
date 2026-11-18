@@ -17,7 +17,7 @@ nav a{color:#e2e8f0;text-decoration:none;background:#1e293b;padding:9px 12px;bor
 nav a:hover{background:#075985}
 main{max-width:900px;margin:auto;padding:20px}
 section{padding:22px 0;scroll-margin-top:130px}
-.hero{text-align:center;padding:55px 15px}
+.hero{text-align:center;padding:45px 15px}
 .hero h2{font-size:30px;color:#38bdf8}
 .hero p{color:#cbd5e1;line-height:1.6}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
@@ -27,6 +27,11 @@ section{padding:22px 0;scroll-margin-top:130px}
 .note{background:#172338;border-left:4px solid #facc15;padding:14px;border-radius:8px;line-height:1.6;color:#e2e8f0}
 .tag{display:inline-block;background:#3b2f13;color:#fde68a;padding:5px 9px;border-radius:20px;font-size:12px;font-weight:bold}
 .small{color:#94a3b8;font-size:14px;line-height:1.6}
+label{display:block;margin:14px 0 7px;color:#cbd5e1}
+select{width:100%;padding:13px;border-radius:8px;background:#080d18;color:white;border:1px solid #475569;font-size:15px}
+button{width:100%;margin-top:18px;padding:14px;border:0;border-radius:9px;background:#0284c7;color:white;font-weight:bold;font-size:15px}
+button:active{background:#0369a1}
+#hasil{display:none;margin-top:18px}
 footer{text-align:center;padding:25px;color:#94a3b8;border-top:1px solid #26364f}
 @media(max-width:480px){main{padding:14px}.hero h2{font-size:25px}nav a{font-size:12px;padding:8px 10px}}
 </style>
@@ -38,6 +43,7 @@ footer{text-align:center;padding:25px;color:#94a3b8;border-top:1px solid #26364f
 <a href="#home">HOME</a>
 <a href="#host">HOST</a>
 <a href="#firmware">FIRMWARE</a>
+<a href="#checker">CHECKER</a>
 <a href="#payload">PAYLOAD</a>
 <a href="#about">ABOUT</a>
 </nav>
@@ -65,45 +71,70 @@ footer{text-align:center;padding:25px;color:#94a3b8;border-top:1px solid #26364f
 </section>
 
 <section id="firmware">
-<h2>FIRMWARE 13.02</h2>
+<h2>FIRMWARE</h2>
 <div class="card">
-<h3>Target Firmware</h3>
+<h3>Target Penelitian</h3>
 <p>PS4 Firmware 13.02</p>
-<p class="small">Informasi kompatibilitas akan ditambahkan setelah ada sumber dan hasil pengujian yang dapat diverifikasi.</p>
+<p class="small">Status kompatibilitas belum diverifikasi. Informasi akan diperbarui berdasarkan sumber dan pengujian yang dapat diperiksa.</p>
+</div>
+</section>
+
+<section id="checker">
+<h2>FIRMWARE COMPATIBILITY CHECKER</h2>
+<div class="card">
+<h3>Periksa Informasi Konsol</h3>
+<p class="small">Pilih model dan firmware untuk melihat status data penelitian OBIN87.</p>
+
+<label for="model">Model PS4</label>
+<select id="model">
+<option value="PS4 Pro CUH-7200B">PS4 Pro CUH-7200B</option>
+<option value="PS4 Pro">PS4 Pro (model lain)</option>
+<option value="PS4 Slim">PS4 Slim</option>
+<option value="PS4 Original">PS4 Original</option>
+</select>
+
+<label for="fw">Versi Firmware</label>
+<select id="fw">
+<option value="13.02">13.02</option>
+<option value="13.00">13.00</option>
+<option value="12.00">12.00</option>
+<option value="11.00">11.00</option>
+<option value="9.00">9.00</option>
+<option value="Lainnya">Lainnya / belum tahu</option>
+</select>
+
+<button type="button" onclick="periksa()">PERIKSA</button>
+
+<div id="hasil" class="note" aria-live="polite"></div>
 </div>
 </section>
 
 <section id="payload">
 <h2>PAYLOAD CENTER</h2>
-<p class="small">Daftar kategori fitur dan payload yang sedang dipantau. Status di bawah bukan pernyataan kompatibilitas.</p>
-
+<p class="small">Daftar kategori payload yang sedang dipantau.</p>
 <div class="note">
-<strong>Catatan:</strong> Belum ada payload yang dinyatakan tersedia atau teruji untuk target firmware 13.02 di website ini. Jangan menjalankan file yang tidak jelas sumber dan kecocokannya.
+<strong>Catatan:</strong> Belum ada payload yang dinyatakan tersedia atau teruji untuk target firmware 13.02. Jangan menjalankan file yang tidak jelas sumber dan kecocokannya.
 </div>
-
 <div class="grid" style="margin-top:14px">
 <div class="card">
 <h3>GoldHEN</h3>
 <span class="tag">BELUM DIVERIFIKASI</span>
-<p class="small">Status ketersediaan dan kompatibilitas untuk firmware target masih menunggu verifikasi.</p>
+<p class="small">Kompatibilitas firmware target masih menunggu verifikasi.</p>
 </div>
-
 <div class="card">
 <h3>Debug Settings</h3>
 <span class="tag">BELUM DIVERIFIKASI</span>
-<p class="small">Informasi fitur akan ditambahkan jika ada metode yang valid dan telah diuji.</p>
+<p class="small">Informasi metode akan ditambahkan setelah pemeriksaan.</p>
 </div>
-
 <div class="card">
 <h3>Homebrew</h3>
 <span class="tag">BELUM DIVERIFIKASI</span>
-<p class="small">Daftar aplikasi homebrew akan ditampilkan setelah sumber dan persyaratannya diperiksa.</p>
+<p class="small">Daftar aplikasi akan ditampilkan setelah sumbernya diperiksa.</p>
 </div>
-
 <div class="card">
 <h3>Linux / Other Tools</h3>
 <span class="tag">BELUM DIVERIFIKASI</span>
-<p class="small">Informasi alat tambahan akan dipublikasikan setelah pengujian dan dokumentasi tersedia.</p>
+<p class="small">Informasi alat tambahan menunggu pengujian.</p>
 </div>
 </div>
 </section>
@@ -113,10 +144,24 @@ footer{text-align:center;padding:25px;color:#94a3b8;border-top:1px solid #26364f
 <div class="card">
 <h3>Tentang Proyek</h3>
 <p>OBIN87 adalah proyek pengembangan website informasi dan host PlayStation 4.</p>
-<p class="small">Versi website: 1.1</p>
+<p class="small">Versi website: 1.2</p>
 </div>
 </section>
 </main>
 <footer>OBIN87 PS4 HOST — 2026</footer>
+
+<script>
+function periksa(){
+const model=document.getElementById("model").value;
+const fw=document.getElementById("fw").value;
+const hasil=document.getElementById("hasil");
+hasil.style.display="block";
+hasil.innerHTML="<strong>HASIL PEMERIKSAAN</strong><br><br>"+
+"Model: "+model+"<br>"+
+"Firmware: "+fw+"<br><br>"+
+"<strong>STATUS: BELUM DIVERIFIKASI</strong><br>"+
+"Database OBIN87 belum memiliki hasil pengujian yang cukup untuk menyatakan kompatibilitas model dan firmware ini. Ini bukan berarti kompatibel atau tidak kompatibel.";
+}
+</script>
 </body>
 </html>
