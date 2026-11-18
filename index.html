@@ -4,15 +4,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080d18">
 <title>OBIN87 | PS4 HOST</title>
 <style>
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:#080d18;color:#f1f5f9;font-family:Arial,sans-serif}
 header{position:sticky;top:0;background:#101a2b;padding:16px;text-align:center;border-bottom:1px solid #26364f;z-index:5}
-header h1{margin:0;color:#38bdf8}
+header h1{margin:0;color:#38bdf8;letter-spacing:3px}
 nav{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-top:12px}
 nav a{color:#e2e8f0;text-decoration:none;background:#1e293b;padding:9px 12px;border-radius:8px;font-size:13px}
+nav a:hover{background:#075985}
 main{max-width:900px;margin:auto;padding:20px}
 section{padding:22px 0;scroll-margin-top:130px}
 .hero{text-align:center;padding:55px 15px}
@@ -22,7 +24,11 @@ section{padding:22px 0;scroll-margin-top:130px}
 .card{background:#111c2e;border:1px solid #26364f;border-radius:14px;padding:20px}
 .card h3{color:#38bdf8;margin-top:0}
 .status{color:#facc15;font-weight:bold}
+.note{background:#172338;border-left:4px solid #facc15;padding:14px;border-radius:8px;line-height:1.6;color:#e2e8f0}
+.tag{display:inline-block;background:#3b2f13;color:#fde68a;padding:5px 9px;border-radius:20px;font-size:12px;font-weight:bold}
+.small{color:#94a3b8;font-size:14px;line-height:1.6}
 footer{text-align:center;padding:25px;color:#94a3b8;border-top:1px solid #26364f}
+@media(max-width:480px){main{padding:14px}.hero h2{font-size:25px}nav a{font-size:12px;padding:8px 10px}}
 </style>
 </head>
 <body>
@@ -39,15 +45,16 @@ footer{text-align:center;padding:25px;color:#94a3b8;border-top:1px solid #26364f
 <main>
 <section class="hero" id="home">
 <h2>OBIN87 PS4 HOST</h2>
-<p>Welcome to OBIN87 — pusat informasi dan pengembangan PS4 Host.</p>
+<p>Pusat informasi dan pengembangan PlayStation 4 Host.</p>
 </section>
+
 <section id="host">
 <h2>HOST</h2>
 <div class="grid">
 <div class="card">
 <h3>Status Proyek</h3>
 <p class="status">DALAM PENGEMBANGAN</p>
-<p>Website OBIN87 sedang dikembangkan.</p>
+<p>Website OBIN87 sedang dikembangkan secara bertahap.</p>
 </div>
 <div class="card">
 <h3>Hardware Referensi</h3>
@@ -56,28 +63,57 @@ footer{text-align:center;padding:25px;color:#94a3b8;border-top:1px solid #26364f
 </div>
 </div>
 </section>
+
 <section id="firmware">
 <h2>FIRMWARE 13.02</h2>
 <div class="card">
 <h3>Target Firmware</h3>
 <p>PS4 Firmware 13.02</p>
-<p>Informasi kompatibilitas akan ditambahkan setelah pengujian.</p>
+<p class="small">Informasi kompatibilitas akan ditambahkan setelah ada sumber dan hasil pengujian yang dapat diverifikasi.</p>
 </div>
 </section>
+
 <section id="payload">
 <h2>PAYLOAD CENTER</h2>
+<p class="small">Daftar kategori fitur dan payload yang sedang dipantau. Status di bawah bukan pernyataan kompatibilitas.</p>
+
+<div class="note">
+<strong>Catatan:</strong> Belum ada payload yang dinyatakan tersedia atau teruji untuk target firmware 13.02 di website ini. Jangan menjalankan file yang tidak jelas sumber dan kecocokannya.
+</div>
+
+<div class="grid" style="margin-top:14px">
 <div class="card">
-<h3>Payload</h3>
-<p class="status">BELUM TERSEDIA</p>
-<p>Payload akan ditampilkan setelah tersedia dan berhasil diuji. Tidak ada payload yang dinyatakan kompatibel sebelum pengujian.</p>
+<h3>GoldHEN</h3>
+<span class="tag">BELUM DIVERIFIKASI</span>
+<p class="small">Status ketersediaan dan kompatibilitas untuk firmware target masih menunggu verifikasi.</p>
+</div>
+
+<div class="card">
+<h3>Debug Settings</h3>
+<span class="tag">BELUM DIVERIFIKASI</span>
+<p class="small">Informasi fitur akan ditambahkan jika ada metode yang valid dan telah diuji.</p>
+</div>
+
+<div class="card">
+<h3>Homebrew</h3>
+<span class="tag">BELUM DIVERIFIKASI</span>
+<p class="small">Daftar aplikasi homebrew akan ditampilkan setelah sumber dan persyaratannya diperiksa.</p>
+</div>
+
+<div class="card">
+<h3>Linux / Other Tools</h3>
+<span class="tag">BELUM DIVERIFIKASI</span>
+<p class="small">Informasi alat tambahan akan dipublikasikan setelah pengujian dan dokumentasi tersedia.</p>
+</div>
 </div>
 </section>
+
 <section id="about">
 <h2>ABOUT OBIN87</h2>
 <div class="card">
 <h3>Tentang Proyek</h3>
 <p>OBIN87 adalah proyek pengembangan website informasi dan host PlayStation 4.</p>
-<p>Versi website: 1.0</p>
+<p class="small">Versi website: 1.1</p>
 </div>
 </section>
 </main>
