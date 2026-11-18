@@ -3,163 +3,84 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#080d18">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>OBIN87 | PS4 HOST</title>
-
 <style>
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  background: #080d18;
-  color: #eaf2ff;
-  font-family: Arial, sans-serif;
-  text-align: center;
-}
-
-header {
-  padding: 45px 15px 35px;
-  background: linear-gradient(135deg,#101d35,#172c4d);
-  border-bottom: 2px solid #258cff;
-}
-
-.logo {
-  color: #45a5ff;
-  font-size: 42px;
-  font-weight: 900;
-  letter-spacing: 4px;
-}
-
-.subtitle {
-  color: #a9bdd8;
-  letter-spacing: 3px;
-  font-size: 13px;
-  margin-top: 10px;
-}
-
-.container {
-  width: 92%;
-  max-width: 760px;
-  margin: 30px auto;
-}
-
-.welcome {
-  font-size: 25px;
-  margin-bottom: 10px;
-}
-
-.description {
-  color: #9eacc2;
-  line-height: 1.7;
-  font-size: 14px;
-}
-
-.card {
-  background: #111c30;
-  border: 1px solid #243b5c;
-  border-radius: 14px;
-  padding: 22px 15px;
-  margin: 16px 0;
-  box-shadow: 0 8px 25px #0005;
-}
-
-.card h2 {
-  color: #49a6ff;
-  font-size: 17px;
-  margin-top: 0;
-}
-
-.value {
-  font-size: 21px;
-  font-weight: bold;
-}
-
-.status {
-  display: inline-block;
-  background: #493719;
-  color: #ffd36a;
-  padding: 9px 17px;
-  border-radius: 20px;
-  font-size: 12px;
-  font-weight: bold;
-}
-
-.note {
-  color: #9eacc2;
-  font-size: 13px;
-  line-height: 1.7;
-}
-
-footer {
-  margin-top: 40px;
-  padding: 25px 10px;
-  background: #0d1627;
-  color: #72839e;
-  font-size: 12px;
-}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#080d18;color:#f1f5f9;font-family:Arial,sans-serif}
+header{position:sticky;top:0;background:#101a2b;padding:16px;text-align:center;border-bottom:1px solid #26364f;z-index:5}
+header h1{margin:0;color:#38bdf8}
+nav{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-top:12px}
+nav a{color:#e2e8f0;text-decoration:none;background:#1e293b;padding:9px 12px;border-radius:8px;font-size:13px}
+main{max-width:900px;margin:auto;padding:20px}
+section{padding:22px 0;scroll-margin-top:130px}
+.hero{text-align:center;padding:55px 15px}
+.hero h2{font-size:30px;color:#38bdf8}
+.hero p{color:#cbd5e1;line-height:1.6}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.card{background:#111c2e;border:1px solid #26364f;border-radius:14px;padding:20px}
+.card h3{color:#38bdf8;margin-top:0}
+.status{color:#facc15;font-weight:bold}
+footer{text-align:center;padding:25px;color:#94a3b8;border-top:1px solid #26364f}
 </style>
 </head>
-
 <body>
-
 <header>
-  <div class="logo">OBIN87</div>
-  <div class="subtitle">PLAYSTATION 4 HOST</div>
+<h1>OBIN87</h1>
+<nav>
+<a href="#home">HOME</a>
+<a href="#host">HOST</a>
+<a href="#firmware">FIRMWARE</a>
+<a href="#payload">PAYLOAD</a>
+<a href="#about">ABOUT</a>
+</nav>
 </header>
-
-<main class="container">
-
-  <h1 class="welcome">WELCOME TO OBIN87</h1>
-
-  <p class="description">
-    Independent PlayStation 4 Host Project.
-    Platform penelitian dan pengembangan host PS4.
-  </p>
-
-  <section class="card">
-    <h2>PROJECT STATUS</h2>
-    <div class="status">DEVELOPMENT IN PROGRESS</div>
-    <p class="note">
-      Proyek OBIN87 sedang dalam tahap pengembangan.
-    </p>
-  </section>
-
-  <section class="card">
-    <h2>TARGET FIRMWARE</h2>
-    <div class="value">PS4 13.02</div>
-    <p class="note">
-      Target penelitian kompatibilitas firmware.
-    </p>
-  </section>
-
-  <section class="card">
-    <h2>HARDWARE REFERENCE</h2>
-    <div class="value">PS4 PRO</div>
-    <p class="note">
-      Model: CUH-7200B
-    </p>
-  </section>
-
-  <section class="card">
-    <h2>ABOUT OBIN87</h2>
-    <p class="note">
-      OBIN87 merupakan proyek independen
-      untuk dokumentasi, penelitian, dan
-      pengembangan lingkungan host PlayStation 4.
-      Dukungan firmware dan payload akan
-      ditampilkan setelah berhasil diuji.
-    </p>
-  </section>
-
+<main>
+<section class="hero" id="home">
+<h2>OBIN87 PS4 HOST</h2>
+<p>Welcome to OBIN87 — pusat informasi dan pengembangan PS4 Host.</p>
+</section>
+<section id="host">
+<h2>HOST</h2>
+<div class="grid">
+<div class="card">
+<h3>Status Proyek</h3>
+<p class="status">DALAM PENGEMBANGAN</p>
+<p>Website OBIN87 sedang dikembangkan.</p>
+</div>
+<div class="card">
+<h3>Hardware Referensi</h3>
+<p>PlayStation 4 Pro</p>
+<p>Model CUH-7200B</p>
+</div>
+</div>
+</section>
+<section id="firmware">
+<h2>FIRMWARE 13.02</h2>
+<div class="card">
+<h3>Target Firmware</h3>
+<p>PS4 Firmware 13.02</p>
+<p>Informasi kompatibilitas akan ditambahkan setelah pengujian.</p>
+</div>
+</section>
+<section id="payload">
+<h2>PAYLOAD CENTER</h2>
+<div class="card">
+<h3>Payload</h3>
+<p class="status">BELUM TERSEDIA</p>
+<p>Payload akan ditampilkan setelah tersedia dan berhasil diuji. Tidak ada payload yang dinyatakan kompatibel sebelum pengujian.</p>
+</div>
+</section>
+<section id="about">
+<h2>ABOUT OBIN87</h2>
+<div class="card">
+<h3>Tentang Proyek</h3>
+<p>OBIN87 adalah proyek pengembangan website informasi dan host PlayStation 4.</p>
+<p>Versi website: 1.0</p>
+</div>
+</section>
 </main>
-
-<footer>
-  OBIN87 PS4 HOST<br>
-  Independent Project © 2026
-</footer>
-
+<footer>OBIN87 PS4 HOST — 2026</footer>
 </body>
 </html>
