@@ -5,40 +5,49 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#080d18">
+<meta name="description" content="OBIN87 — pusat informasi, penelitian kompatibilitas dan pengembangan PS4 Host.">
 <title>OBIN87 | PS4 HOST</title>
 <style>
+:root{--bg:#080d18;--panel:#111c2e;--line:#26364f;--blue:#38bdf8;--muted:#94a3b8;--text:#f1f5f9}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:#080d18;color:#f1f5f9;font-family:Arial,sans-serif}
-header{position:sticky;top:0;background:#101a2b;padding:16px;text-align:center;border-bottom:1px solid #26364f;z-index:5}
-header h1{margin:0;color:#38bdf8;letter-spacing:3px}
-nav{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-top:12px}
-nav a{color:#e2e8f0;text-decoration:none;background:#1e293b;padding:9px 12px;border-radius:8px;font-size:13px}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,sans-serif}
+header{position:sticky;top:0;background:#101a2bf2;backdrop-filter:blur(12px);padding:15px;border-bottom:1px solid var(--line);z-index:10}
+.header-inner{max-width:1050px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.logo{font-size:25px;font-weight:bold;letter-spacing:3px;color:var(--blue)}
+nav{display:flex;gap:7px;flex-wrap:wrap}
+nav a{color:#e2e8f0;text-decoration:none;background:#1e293b;padding:9px 11px;border-radius:8px;font-size:12px}
 nav a:hover{background:#075985}
-main{max-width:900px;margin:auto;padding:20px}
-section{padding:22px 0;scroll-margin-top:130px}
-.hero{text-align:center;padding:45px 15px}
-.hero h2{font-size:30px;color:#38bdf8}
-.hero p{color:#cbd5e1;line-height:1.6}
+main{max-width:1000px;margin:auto;padding:20px}
+section{padding:28px 0;scroll-margin-top:100px}
+.hero{text-align:center;padding:65px 15px 50px}
+.hero h1{font-size:clamp(30px,7vw,52px);margin:0;color:var(--blue);letter-spacing:2px}
+.hero h2{font-size:20px;color:#e2e8f0}
+.hero p{max-width:650px;margin:15px auto;color:#cbd5e1;line-height:1.7}
+.eyebrow{color:var(--blue);font-size:12px;font-weight:bold;letter-spacing:3px}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
-.card{background:#111c2e;border:1px solid #26364f;border-radius:14px;padding:20px}
-.card h3{color:#38bdf8;margin-top:0}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px}
+.card h3{color:var(--blue);margin-top:0}
+.card p{line-height:1.6}
 .status{color:#facc15;font-weight:bold}
-.note{background:#172338;border-left:4px solid #facc15;padding:14px;border-radius:8px;line-height:1.6;color:#e2e8f0}
-.tag{display:inline-block;background:#3b2f13;color:#fde68a;padding:5px 9px;border-radius:20px;font-size:12px;font-weight:bold}
-.small{color:#94a3b8;font-size:14px;line-height:1.6}
+.tag{display:inline-block;background:#3b2f13;color:#fde68a;padding:5px 9px;border-radius:20px;font-size:11px;font-weight:bold}
+.note{background:#172338;border-left:4px solid #facc15;padding:15px;border-radius:8px;line-height:1.7;color:#e2e8f0}
+.small{color:var(--muted);font-size:13px;line-height:1.7}
+.btn{display:inline-block;margin:8px 5px;padding:12px 18px;border-radius:9px;background:#0284c7;color:white;text-decoration:none;font-weight:bold;font-size:13px}
+.btn.secondary{background:#1e293b;border:1px solid var(--line)}
 label{display:block;margin:14px 0 7px;color:#cbd5e1}
 select{width:100%;padding:13px;border-radius:8px;background:#080d18;color:white;border:1px solid #475569;font-size:15px}
-button{width:100%;margin-top:18px;padding:14px;border:0;border-radius:9px;background:#0284c7;color:white;font-weight:bold;font-size:15px}
-button:active{background:#0369a1}
+button{width:100%;margin-top:18px;padding:14px;border:0;border-radius:9px;background:#0284c7;color:white;font-weight:bold;font-size:15px;cursor:pointer}
+button:hover,.btn:hover{background:#0369a1}
 #hasil{display:none;margin-top:18px}
-footer{text-align:center;padding:25px;color:#94a3b8;border-top:1px solid #26364f}
-@media(max-width:480px){main{padding:14px}.hero h2{font-size:25px}nav a{font-size:12px;padding:8px 10px}}
+footer{text-align:center;padding:25px;color:var(--muted);border-top:1px solid var(--line);font-size:13px}
+@media(max-width:600px){.header-inner{justify-content:center}nav{justify-content:center}main{padding:14px}.hero{padding-top:45px}}
 </style>
 </head>
 <body>
 <header>
-<h1>OBIN87</h1>
+<div class="header-inner">
+<div class="logo">OBIN87</div>
 <nav>
 <a href="#home">HOME</a>
 <a href="#host">HOST</a>
@@ -47,95 +56,86 @@ footer{text-align:center;padding:25px;color:#94a3b8;border-top:1px solid #26364f
 <a href="#payload">PAYLOAD</a>
 <a href="#about">ABOUT</a>
 </nav>
+</div>
 </header>
+
 <main>
 <section class="hero" id="home">
-<h2>OBIN87 PS4 HOST</h2>
-<p>Pusat informasi dan pengembangan PlayStation 4 Host.</p>
+<div class="eyebrow">PLAYSTATION 4 RESEARCH PROJECT</div>
+<h1>OBIN87</h1>
+<h2>PS4 HOST & COMPATIBILITY CENTER</h2>
+<p>Pusat informasi, penelitian firmware, pemeriksaan kompatibilitas, dan pengembangan host PlayStation 4.</p>
+<a class="btn" href="#checker">PERIKSA FIRMWARE</a>
+<a class="btn secondary" href="#host">STATUS HOST</a>
 </section>
 
 <section id="host">
-<h2>HOST</h2>
+<h2>HOST STATUS</h2>
 <div class="grid">
 <div class="card">
-<h3>Status Proyek</h3>
+<h3>Pengembangan Host</h3>
 <p class="status">DALAM PENGEMBANGAN</p>
-<p>Website OBIN87 sedang dikembangkan secara bertahap.</p>
+<p class="small">OBIN87 sedang membangun platform host PS4. Fitur exploit dan auto-HEN belum tersedia di website ini.</p>
 </div>
 <div class="card">
 <h3>Hardware Referensi</h3>
 <p>PlayStation 4 Pro</p>
-<p>Model CUH-7200B</p>
+<p>Model: CUH-7200B</p>
+<span class="tag">FIRMWARE 13.02</span>
+<p class="small">Perangkat referensi penelitian. Kompatibilitas khusus model belum diuji langsung oleh OBIN87.</p>
+</div>
+<div class="card">
+<h3>Referensi Eksternal</h3>
+<p class="small">Data penelitian dapat dibandingkan dengan sumber proyek lain. Informasi eksternal tidak otomatis menjadi hasil pengujian OBIN87.</p>
+<a class="btn secondary" href="https://github.com/raw13g/raw13g.github.io" target="_blank" rel="noopener noreferrer">RAW13G GITHUB</a>
 </div>
 </div>
 </section>
 
 <section id="firmware">
-<h2>FIRMWARE</h2>
-<div class="card">
-<h3>Target Penelitian</h3>
-<p>PS4 Firmware 13.02</p>
-<p class="small">Status kompatibilitas belum diverifikasi. Informasi akan diperbarui berdasarkan sumber dan pengujian yang dapat diperiksa.</p>
+<h2>FIRMWARE DATABASE</h2>
+<div class="grid">
+<div class="card"><h3>13.02</h3><span class="tag">TARGET PENELITIAN</span><p class="small">Firmware perangkat referensi. Hasil uji OBIN87 belum tersedia.</p></div>
+<div class="card"><h3>13.00</h3><span class="tag">DIPANTAU</span><p class="small">Menunggu dokumentasi dan verifikasi.</p></div>
+<div class="card"><h3>12.00</h3><span class="tag">DIPANTAU</span><p class="small">Menunggu dokumentasi dan verifikasi.</p></div>
+<div class="card"><h3>11.00 / 9.00</h3><span class="tag">REFERENSI</span><p class="small">Data kompatibilitas perlu diperiksa berdasarkan model dan sumber pengujian.</p></div>
 </div>
 </section>
 
 <section id="checker">
-<h2>FIRMWARE COMPATIBILITY CHECKER</h2>
+<h2>COMPATIBILITY CHECKER</h2>
 <div class="card">
-<h3>Periksa Informasi Konsol</h3>
-<p class="small">Pilih model dan firmware untuk melihat status data penelitian OBIN87.</p>
-
+<h3>Periksa Konsol PS4</h3>
+<p class="small">Pilih model dan firmware. Checker ini menampilkan status database OBIN87, bukan menjalankan exploit.</p>
 <label for="model">Model PS4</label>
 <select id="model">
-<option value="PS4 Pro CUH-7200B">PS4 Pro CUH-7200B</option>
-<option value="PS4 Pro">PS4 Pro (model lain)</option>
-<option value="PS4 Slim">PS4 Slim</option>
-<option value="PS4 Original">PS4 Original</option>
+<option>PS4 Pro CUH-7200B</option>
+<option>PS4 Pro (model lain)</option>
+<option>PS4 Slim</option>
+<option>PS4 Original</option>
 </select>
-
-<label for="fw">Versi Firmware</label>
+<label for="fw">Firmware</label>
 <select id="fw">
-<option value="13.02">13.02</option>
-<option value="13.00">13.00</option>
-<option value="12.00">12.00</option>
-<option value="11.00">11.00</option>
-<option value="9.00">9.00</option>
-<option value="Lainnya">Lainnya / belum tahu</option>
+<option>13.02</option>
+<option>13.00</option>
+<option>12.00</option>
+<option>11.00</option>
+<option>9.00</option>
+<option>Lainnya / belum tahu</option>
 </select>
-
-<button type="button" onclick="periksa()">PERIKSA</button>
-
+<button type="button" onclick="periksa()">PERIKSA SEKARANG</button>
 <div id="hasil" class="note" aria-live="polite"></div>
 </div>
 </section>
 
 <section id="payload">
 <h2>PAYLOAD CENTER</h2>
-<p class="small">Daftar kategori payload yang sedang dipantau.</p>
-<div class="note">
-<strong>Catatan:</strong> Belum ada payload yang dinyatakan tersedia atau teruji untuk target firmware 13.02. Jangan menjalankan file yang tidak jelas sumber dan kecocokannya.
-</div>
+<div class="note"><strong>Informasi:</strong> OBIN87 belum menyediakan payload yang dinyatakan teruji untuk firmware 13.02. Jangan menjalankan file yang tidak jelas sumber dan kecocokannya.</div>
 <div class="grid" style="margin-top:14px">
-<div class="card">
-<h3>GoldHEN</h3>
-<span class="tag">BELUM DIVERIFIKASI</span>
-<p class="small">Kompatibilitas firmware target masih menunggu verifikasi.</p>
-</div>
-<div class="card">
-<h3>Debug Settings</h3>
-<span class="tag">BELUM DIVERIFIKASI</span>
-<p class="small">Informasi metode akan ditambahkan setelah pemeriksaan.</p>
-</div>
-<div class="card">
-<h3>Homebrew</h3>
-<span class="tag">BELUM DIVERIFIKASI</span>
-<p class="small">Daftar aplikasi akan ditampilkan setelah sumbernya diperiksa.</p>
-</div>
-<div class="card">
-<h3>Linux / Other Tools</h3>
-<span class="tag">BELUM DIVERIFIKASI</span>
-<p class="small">Informasi alat tambahan menunggu pengujian.</p>
-</div>
+<div class="card"><h3>GoldHEN</h3><span class="tag">BELUM DIVERIFIKASI</span><p class="small">Belum ada hasil pengujian OBIN87 untuk target 13.02.</p></div>
+<div class="card"><h3>PS4-HEN</h3><span class="tag">REFERENSI EKSTERNAL</span><p class="small">Informasi dari proyek eksternal harus diperiksa terpisah dari GoldHEN.</p></div>
+<div class="card"><h3>Debug Settings</h3><span class="tag">BELUM TERSEDIA</span><p class="small">Menunggu pengembangan dan verifikasi.</p></div>
+<div class="card"><h3>Homebrew</h3><span class="tag">BELUM TERSEDIA</span><p class="small">Daftar aplikasi akan ditambahkan setelah sumber diperiksa.</p></div>
 </div>
 </section>
 
@@ -143,12 +143,14 @@ footer{text-align:center;padding:25px;color:#94a3b8;border-top:1px solid #26364f
 <h2>ABOUT OBIN87</h2>
 <div class="card">
 <h3>Tentang Proyek</h3>
-<p>OBIN87 adalah proyek pengembangan website informasi dan host PlayStation 4.</p>
-<p class="small">Versi website: 1.2</p>
+<p>OBIN87 merupakan proyek independen untuk membangun pusat informasi dan pengembangan host PlayStation 4.</p>
+<p class="small">Versi website: 2.0</p>
+<p class="small">Status: Pengembangan aktif. Informasi kompatibilitas hanya akan dinyatakan teruji jika ada bukti pengujian yang dapat diperiksa.</p>
 </div>
 </section>
 </main>
-<footer>OBIN87 PS4 HOST — 2026</footer>
+
+<footer>OBIN87 PS4 HOST — 2026<br>Independent PS4 Research Project</footer>
 
 <script>
 function periksa(){
@@ -160,7 +162,7 @@ hasil.innerHTML="<strong>HASIL PEMERIKSAAN</strong><br><br>"+
 "Model: "+model+"<br>"+
 "Firmware: "+fw+"<br><br>"+
 "<strong>STATUS: BELUM DIVERIFIKASI</strong><br>"+
-"Database OBIN87 belum memiliki hasil pengujian yang cukup untuk menyatakan kompatibilitas model dan firmware ini. Ini bukan berarti kompatibel atau tidak kompatibel.";
+"Database OBIN87 belum memiliki hasil pengujian yang cukup untuk menyatakan kompatibilitas kombinasi model dan firmware ini. Status ini bukan berarti kompatibel atau tidak kompatibel.";
 }
 </script>
 </body>
